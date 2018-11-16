@@ -1,3 +1,5 @@
+//Lukas Starka
+
 package at.htl.exam01.compress;
 
 import java.io.FileNotFoundException;

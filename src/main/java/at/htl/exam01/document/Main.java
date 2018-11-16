@@ -1,8 +1,10 @@
+//Lukas Starka
+
 package at.htl.exam01.document;
 
 public class Main {
 
-    /**
+    /*
      *
      * Führen Sie hier folgendes durch:
      *
@@ -30,6 +32,8 @@ public class Main {
     private static void writeOutput(Document[] document) {
         int counterBooks = 0;
         int counterEmails = 0;
+        String pluralVSsingularBooks = "";
+        String pluralVSsingularEmails = "";
 
         for (int i = 0; i < document.length; i++) {
             if (document[i] instanceof Email) {
@@ -40,7 +44,19 @@ public class Main {
                 counterBooks++;
             }
         }
-        System.out.printf("%nAnzahl Books: %d%nAnzahl Email: %d", counterBooks, counterEmails);
+        if (counterBooks > 1) {
+            pluralVSsingularBooks = "Bücher";
+        }
+        else{
+            pluralVSsingularBooks = "Buch";
+        }
+        if (counterEmails > 1) {
+            pluralVSsingularEmails = "Emails";
+        }
+        else{
+            pluralVSsingularEmails = "Email";
+        }
+        System.out.printf("%nAnzahl %s: %d%nAnzahl %s: %d", pluralVSsingularBooks, counterBooks, pluralVSsingularEmails, counterEmails);
     }
 
 }
