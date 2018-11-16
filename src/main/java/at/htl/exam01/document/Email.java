@@ -1,14 +1,13 @@
 package at.htl.exam01.document;
 
 public class Email extends Document {
-    private String absender;
-    private String empfaenger;
-    private String betreff;
+    private String to;
+    private String subject;
 
-    public Email(String absender,  String betreff, String empfaenger) {
-        this.absender = absender;
-        this.betreff = betreff;
-        this.empfaenger = empfaenger;
+    public Email(String author, String to, String subject) {
+        super(author);
+        this.to = to;
+        this.subject = subject;
     }
 
     @Override
@@ -16,40 +15,22 @@ public class Email extends Document {
         StringBuilder ausgabe = new StringBuilder();
 
         ausgabe.append("'");
-        ausgabe.append(betreff);
+        ausgabe.append(getSubject());
         ausgabe.append("' von '");
-        ausgabe.append(absender);
+        ausgabe.append(getAuthor());
         ausgabe.append("' an '");
-        ausgabe.append(empfaenger);
+        ausgabe.append(getTo());
         ausgabe.append("'");
         ausgabe.append("\n");
 
         return ausgabe.toString();
     }
 
-    //region Getter und Setter
-    public String getAbsender() {
-        return absender;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setAbsender(String absender) {
-        this.absender = absender;
+    public String getTo() {
+        return to;
     }
-
-    public String getEmpfaenger() {
-        return empfaenger;
-    }
-
-    public void setEmpfaenger(String empfaenger) {
-        this.empfaenger = empfaenger;
-    }
-
-    public String getBetreff() {
-        return betreff;
-    }
-
-    public void setBetreff(String betreff) {
-        this.betreff = betreff;
-    }
-    //endregion
 }

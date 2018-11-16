@@ -25,8 +25,8 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Document[] document = new Document[]{new Buch("Rowlings", "Harry Potter und der Stein der Weisen"), new Email("Susi", "Bewerbung", "CoolCompany"), new Buch("Tolkien", "lordOftheRings")};
-        writeOutput(document);
+        Document[] docs = new Document[]{new Book("Rowlings", "Harry Potter und der Stein der Weisen"), new Email("Susi", "CoolCompany", "Bewerbung"), new Book("Tolkien", "lordOftheRings")};
+        writeOutput(docs);
     }
 
     private static void writeOutput(Document[] document) {
@@ -39,7 +39,7 @@ public class Main {
             if (document[i] instanceof Email) {
                 System.out.printf("Email: %s", document[i].toString());
                 counterEmails++;
-            } else if (document[i] instanceof Buch) {
+            } else if (document[i] instanceof Book) {
                 System.out.printf("Book: %s", document[i].toString());
                 counterBooks++;
             }
